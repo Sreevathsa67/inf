@@ -69,21 +69,7 @@ const About = () => (
         ))}
       </div>
 
-      {/* Vision */}
-      <SectionHeading title="Our Vision" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {[
-          { icon: Target, title: "Innovation", desc: "The best way to predict the future is to create it. — Peter Drucker" },
-          { icon: Rocket, title: "Impact", desc: "We make a living by what we get, but we make a life by what we give. — Winston Churchill" },
-          { icon: Heart, title: "Collaboration", desc: "Great things in business are never done by one person. They're done by a team of people. — Steve Jobs" },
-        ].map((item, i) => (
-          <motion.div key={i} {...stagger} transition={{ delay: i * 0.15 }} className="glass-card p-8 text-center hover:neon-border transition-all duration-500">
-            <item.icon className="w-10 h-10 text-primary mx-auto mb-4" />
-            <h3 className="font-display text-lg font-bold text-foreground mb-2">{item.title}</h3>
-            <p className="text-muted-foreground text-sm">{item.desc}</p>
-          </motion.div>
-        ))}
-      </div>
+      
 
     </div>
     <Footer />
