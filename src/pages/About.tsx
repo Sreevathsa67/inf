@@ -57,18 +57,14 @@ const About = () => (
             {item.src ? (
               <img
                 src={item.src}
-                alt={item.label}
+                alt="Gallery"
                 className="w-full h-full object-cover min-h-40 group-hover:scale-105 transition-transform duration-500"
               />
             ) : (
               <div className="w-full min-h-40 h-full flex flex-col items-center justify-center gap-2 p-4">
                 <ImageIcon className="w-8 h-8 text-primary/40" />
-                <span className="text-muted-foreground text-xs text-center">{item.label}</span>
               </div>
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-              <span className="text-foreground text-xs font-display font-semibold">{item.label}</span>
-            </div>
           </motion.div>
         ))}
       </div>
@@ -77,9 +73,9 @@ const About = () => (
       <SectionHeading title="Our Vision" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {[
-          { icon: Target, title: "Innovation", desc: "Pushing boundaries of what's possible through technology and creative thinking." },
-          { icon: Rocket, title: "Impact", desc: "Creating solutions that make a tangible difference in communities and industries." },
-          { icon: Heart, title: "Collaboration", desc: "Building bridges between disciplines, institutions, and ideas." },
+          { icon: Target, title: "Innovation", desc: "The best way to predict the future is to create it. — Peter Drucker" },
+          { icon: Rocket, title: "Impact", desc: "We make a living by what we get, but we make a life by what we give. — Winston Churchill" },
+          { icon: Heart, title: "Collaboration", desc: "Great things in business are never done by one person. They're done by a team of people. — Steve Jobs" },
         ].map((item, i) => (
           <motion.div key={i} {...stagger} transition={{ delay: i * 0.15 }} className="glass-card p-8 text-center hover:neon-border transition-all duration-500">
             <item.icon className="w-10 h-10 text-primary mx-auto mb-4" />

@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/problems", label: "Problems" },
- 
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
@@ -30,38 +29,33 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full flex items-center justify-between h-20 px-8 md:px-14">
+      <div className="w-full flex items-center justify-between h-20 px-5 md:px-14">
 
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-         
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-primary font-bold text-sm tracking-[0.2em] uppercase neon-text">
-              Infothon
-            </span>
-            <span className="text-foreground/40 text-[10px] tracking-[0.3em] uppercase">
-              6.0
-            </span>
-          </div>
-        </Link>
+        {/* Text logo — visible on ALL screen sizes */}
+        <div className="flex items-center gap-3 flex-shrink-0">
+          <Link to="/">
+            <div className="flex flex-col leading-tight">
+              <span className="text-primary font-bold text-sm tracking-[0.2em] uppercase neon-text">
+                Infothon
+              </span>
+              <span className="text-foreground/40 text-[10px] tracking-[0.3em] uppercase">
+                6.0
+              </span>
+            </div>
+          </Link>
+          <div className="w-px h-7 bg-white/20" />
+          <img src="/unstop.png" alt="Unstop" className="h-9 w-auto opacity-90 rounded" />
+        </div>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1 ml-auto">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             return (
-              <Link
-                key={link.to}
-                to={link.to}
-                className="relative px-4 py-2 group"
-              >
-                <span
-                  className={`text-xs font-semibold tracking-[0.15em] uppercase transition-colors duration-300 ${
-                    isActive
-                      ? "text-primary"
-                      : "text-foreground/60 group-hover:text-foreground"
-                  }`}
-                >
+              <Link key={link.to} to={link.to} className="relative px-4 py-2 group">
+                <span className={`text-xs font-semibold tracking-[0.15em] uppercase transition-colors duration-300 ${
+                  isActive ? "text-primary" : "text-foreground/60 group-hover:text-foreground"
+                }`}>
                   {link.label}
                 </span>
                 {isActive && (
@@ -76,11 +70,9 @@ const Navbar = () => {
               </Link>
             );
           })}
-
-          {/* Register glowing pill */}
           <Link
             to="/register"
-            className="ml-4 relative px-5 py-2 rounded-full text-xs font-bold tracking-[0.15em] uppercase text-background gradient-primary shadow-[0_0_16px_hsl(48_100%_50%/0.4)] hover:shadow-[0_0_28px_hsl(48_100%_50%/0.7)] transition-all duration-300 hover:scale-105"
+            className="ml-4 px-5 py-2 rounded-full text-xs font-bold tracking-[0.15em] uppercase text-background gradient-primary shadow-[0_0_16px_hsl(48_100%_50%/0.4)] hover:shadow-[0_0_28px_hsl(48_100%_50%/0.7)] transition-all duration-300 hover:scale-105"
           >
             Register
           </Link>
@@ -88,7 +80,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden w-10 h-10 rounded-full glass-card border border-primary/20 flex items-center justify-center text-foreground hover:border-primary/60 transition-all duration-200"
+          className="md:hidden ml-auto w-10 h-10 rounded-full glass-card border border-primary/20 flex items-center justify-center text-foreground hover:border-primary/60 transition-all duration-200"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
