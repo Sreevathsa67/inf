@@ -116,9 +116,9 @@ const Index = () => {
           <div className="max-w-3xl mx-auto space-y-0">
             {[
               { icon: Calendar, date: "March 28th", title: "Registration Ends", desc: "Sign up and form your team" },
-              { icon: Send, date: "March 1st", title: "PPT Submission", desc: "Submit your solution approach" },
+              { icon: Send, date: "March 29th  -  April 1st", title: "PPT Submission", desc: "Submit your solution approach" },
               { icon: Zap, date: "April 11th and 12th", title: "Hackathon Day", desc: "24 hours of building and hacking" },
-              { icon: CheckCircle, date: "April 13th", title: "Results Announced", desc: "Winners declared and prizes distributed" },
+              { icon: CheckCircle, date: "April 12th", title: "Results Announced", desc: "Winners declared and prizes distributed" },
             ].map((item, i) => (
               <motion.div
                 key={i}
