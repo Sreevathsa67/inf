@@ -41,13 +41,18 @@ const Contact = () => (
         >
           <h4 className="text-sm font-bold text-foreground mb-3">Follow Us</h4>
           <div className="flex gap-3 justify-center">
-            {[Linkedin, Instagram].map((Icon, i) => (
+             {[
+      { icon: Linkedin, link: "https://www.linkedin.com/school/vvceofficial/" },
+      { icon: Instagram, link: "https://www.instagram.com/infothon.vvce/" },
+    ].map((item, i) => (
               <a
                 key={i}
-                href="#"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all"
               >
-                <Icon size={18} />
+                <item.icon size={18} />
               </a>
             ))}
           </div>
