@@ -69,7 +69,7 @@ const Footer = () => (
             {[
              
               { icon: Linkedin, link: "https://www.linkedin.com/school/vvceofficial/" },
-              { icon: Instagram, link: "https://www.instagram.com/vvceofficial/" },
+              { icon: Instagram, link: "https://www.instagram.com/infothon.vvce/" },
               
             ].map(({ icon: Icon, link }, i) => (
               <a
