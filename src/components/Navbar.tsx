@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
           </Link>
           <div className="w-px h-7 bg-white/20" />
-          <img src="/unstop.png" alt="Unstop" className="h-9 w-auto opacity-90 rounded" />
+          <img src="/111.png" alt="Unstop" className="h-9 w-auto opacity-90 rounded" />
         </div>
 
         {/* Desktop nav */}
