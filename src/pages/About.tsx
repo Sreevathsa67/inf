@@ -12,14 +12,12 @@ const team = [
   { name: "Ananya Gupta", role: "Sponsorship Lead", initials: "AG" },
 ];
 
-// Replace src values with your actual image paths e.g. "/gallery/photo1.jpg"
 const gallery = [
-  { src: "/gallery/photo1.jpg", span: "md:col-span-2 md:row-span-2", label: "Opening Ceremony" },
-  { src: "/gallery/photo2.JPG", span: "", label: "Hacking in Progress" },
-  { src: "/gallery/photo3.JPG", span: "", label: "Mentorship Session" },
-  { src: "/gallery/photo4.JPG", span: "", label: "Prize Distribution" },
-  { src: "/gallery/photo5.JPG", span: "md:col-span-2", label: "Team Collaboration" },
-  { src: "/gallery/photo6.JPG", span: "", label: "Keynote Talk" },
+  { src: "/gallery/photo1.jpg", span: "md:col-span-2 md:row-span-2" },
+  { src: "/gallery/2.jpeg", span: "" },
+  { src: "/gallery/photo3.jpeg", span: "" },
+  { src: "/gallery/photo4.jpeg", span: "" },
+  { src: "/gallery/photo5.jpeg", span: "md:col-span-2" },
 ];
 
 const stagger = {
@@ -36,17 +34,19 @@ const About = () => (
       <SectionHeading title="About Infothon" subtitle="Where innovation meets impact" />
       <motion.div {...stagger} className="glass-card neon-border p-8 md:p-12 max-w-3xl mx-auto mb-24 text-center">
         <p className="text-muted-foreground leading-relaxed">
-          Infothon is a flagship hackathon that brings together students, developers, and innovators to tackle real-world
-          challenges. Now in its 6th edition, Infothon has grown into one of the most anticipated tech events,
-          fostering creativity, collaboration, and cutting-edge problem solving across disciplines.
+          Infothon is the flagship hackathon of the Department of Information Science & Engineering at Vidyavardhaka College of Engineering — a platform where curious minds come together to build, break, and innovate.
+          <br /><br />
+          Now in its 6th edition, Infothon has grown into one of the most anticipated tech events on campus, bringing together students, developers, and problem-solvers to tackle real-world challenges head-on.
+          <br /><br />
+          Over the years, Infothon has become more than just a competition — it's a culture. A space where ideas get stress-tested, teams push their limits, and solutions that actually matter come to life.
+          <br /><br />
+          Infothon 6.0 continues that legacy — bigger, bolder, and built for the builders of tomorrow.
         </p>
       </motion.div>
 
-     
-
       {/* Gallery */}
       <SectionHeading title="Gallery" subtitle="Moments from past editions" />
-      <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-3 gap-4 max-w-5xl mx-auto mb-24">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto mb-24">
         {gallery.map((item, i) => (
           <motion.div
             key={i}

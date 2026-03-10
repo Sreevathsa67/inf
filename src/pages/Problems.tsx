@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import {
   Bot, Users, Cloud, Shield, Leaf, Brain, Cpu, AlertTriangle,
   Zap, BookOpen, Truck, Sprout, HeartPulse, GraduationCap,
-  FlaskConical, Droplets, Wind, Sun, Recycle, MapPin, Download, X, ChevronRight,
+  FlaskConical, Droplets, Wind, Sun, Recycle, MapPin, Download, X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -65,85 +65,72 @@ const sdgProblems = [
   { id: "S25", title: "SDG Impact Tracking Dashboard for Governments",  problem: "Governments struggle to track progress toward SDG targets.",  objectives: ["Integrate datasets across sectors","Track SDG indicators","Visualize progress through dashboards","Support data-driven policy decisions"], icon: Brain },
 ];
 
+type Problem = { id: string; title: string; problem: string; objectives: string[]; icon: any; theme: string; };
+
 const THEMES = [
-  { key: "all",     label: "All Themes" },
-  { key: "agentic", label: "Agentic AI & Autonomous Systems" },
-  { key: "sdg",     label: "Sustainable Development Goals" },
+  { key: "all",     label: "All" },
+  { key: "agentic", label: "Agentic AI" },
+  { key: "sdg",     label: "Sus" },
 ];
 
-type Problem = {
-  id: string; title: string; problem: string; objectives: string[]; icon: any; theme: string;
-};
+const themeColor = (theme: string) => theme === "agentic"
+  ? { bar: "bg-violet-500", text: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20", icon: "bg-gradient-to-br from-violet-500 to-purple-700", dot: "bg-violet-400", label: "text-violet-300/70", box: "bg-violet-500/5 border-violet-400/20", strip: "from-violet-500 to-purple-600" }
+  : { bar: "bg-emerald-500", text: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", icon: "bg-gradient-to-br from-emerald-400 to-teal-600", dot: "bg-emerald-400", label: "text-emerald-300/70", box: "bg-emerald-500/5 border-emerald-400/20", strip: "from-emerald-400 to-teal-500" };
 
-const Modal = ({ p, onClose }: { p: Problem; onClose: () => void }) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 z-50 flex items-center justify-center p-6"
-    onClick={onClose}
-  >
-    {/* Blurred backdrop */}
-    <div className="absolute inset-0 bg-background/75 backdrop-blur-lg" />
-
+const Modal = ({ p, onClose }: { p: Problem; onClose: () => void }) => {
+  const c = themeColor(p.theme);
+  return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.94, y: 24 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.94, y: 24 }}
-      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-      className="relative w-full max-w-xl glass-card neon-border shadow-2xl overflow-hidden"
-      onClick={(e) => e.stopPropagation()}
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-6"
+      onClick={onClose}
     >
-      {/* Gradient top strip */}
-      <div className="h-1 w-full gradient-primary" />
-
-      <div className="p-7">
-        {/* Header */}
-        <div className="flex items-start gap-4 mb-6 pr-8">
-          <div className="w-12 h-12 rounded-2xl gradient-primary flex items-center justify-center flex-shrink-0 shadow-lg">
-            <p.icon className="w-6 h-6 text-primary-foreground" />
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-lg" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.93, y: 28 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.93, y: 28 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="relative w-full max-w-lg glass-card shadow-2xl overflow-hidden border border-white/8"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className={`h-1 w-full bg-gradient-to-r ${c.strip}`} />
+        <div className="p-7">
+          <div className="flex items-start gap-4 mb-5 pr-8">
+            <div className={`w-11 h-11 rounded-xl ${c.icon} flex items-center justify-center flex-shrink-0 shadow-lg`}>
+              <p.icon className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <span className={`text-[10px] font-semibold uppercase tracking-widest mb-1 block ${c.label}`}>
+                {p.theme === "agentic" ? "Agentic AI & Autonomous Systems" : "Sustainable Development Goals"}
+              </span>
+              <h2 className="text-base font-bold text-foreground leading-snug">{p.title}</h2>
+            </div>
+          </div>
+          <button onClick={onClose} className="absolute top-5 right-5 w-8 h-8 rounded-full glass-card border border-white/10 flex items-center justify-center text-muted-foreground hover:text-foreground transition-all">
+            <X className="w-4 h-4" />
+          </button>
+          <div className="border-t border-white/8 mb-5" />
+          <div className={`mb-5 p-4 rounded-xl border ${c.box}`}>
+            <p className={`text-[10px] font-semibold uppercase tracking-widest mb-2 ${c.text}`}>Problem Statement</p>
+            <p className="text-sm text-foreground/85 leading-relaxed">{p.problem}</p>
           </div>
           <div>
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-primary/70 mb-1 block">
-              {p.theme === "agentic" ? "Agentic AI & Autonomous Systems" : "Sustainable Development Goals"}
-            </span>
-            <h2 className="text-base font-bold text-foreground leading-snug">{p.title}</h2>
+            <p className={`text-[10px] font-semibold uppercase tracking-widest mb-3 ${c.text}`}>Objectives</p>
+            <ul className="space-y-2">
+              {p.objectives.map((obj, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className={`mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0 ${c.dot}`} />
+                  <span className="text-sm text-muted-foreground leading-relaxed">{obj}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-
-        {/* Close */}
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 w-8 h-8 rounded-full glass-card border border-white/10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/50 transition-all duration-200"
-        >
-          <X className="w-4 h-4" />
-        </button>
-
-        {/* Divider */}
-        <div className="border-t border-white/8 mb-5" />
-
-        {/* Problem */}
-        <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/15">
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-primary mb-2">Problem Statement</p>
-          <p className="text-sm text-foreground/90 leading-relaxed">{p.problem}</p>
-        </div>
-
-        {/* Objectives */}
-        <div>
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-primary mb-3">Objectives</p>
-          <ul className="space-y-2">
-            {p.objectives.map((obj, idx) => (
-              <li key={idx} className="flex items-start gap-3">
-                <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                <span className="text-sm text-muted-foreground leading-relaxed">{obj}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
 
 const Problems = () => {
   const [activeTheme, setActiveTheme] = useState("all");
@@ -154,13 +141,60 @@ const Problems = () => {
     ...sdgProblems.map((p) => ({ ...p, theme: "sdg" })),
   ];
 
-  const filtered = allProblems.filter((p) =>
-    activeTheme === "all" || p.theme === activeTheme
-  );
+  const filtered = allProblems.filter((p) => activeTheme === "all" || p.theme === activeTheme);
+
+  // Group by theme for sectioned display
+  const agFiltered = filtered.filter(p => p.theme === "agentic");
+  const sdgFiltered = filtered.filter(p => p.theme === "sdg");
+
+  const renderGroup = (items: Problem[], globalOffset: number) => items.map((p, i) => {
+    const c = themeColor(p.theme);
+    const num = globalOffset + i + 1;
+    return (
+      <motion.div
+        key={p.id}
+        initial={{ opacity: 0, x: -12 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: Math.min((globalOffset + i) * 0.02, 0.6) }}
+        onClick={() => setSelected(p)}
+        className="group flex items-center gap-5 py-4 px-2 cursor-pointer border-b border-white/5 hover:border-white/0 relative"
+      >
+        {/* Left colour bar — appears on hover */}
+        <div className={`absolute left-0 top-0 bottom-0 w-0.5 ${c.bar} scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center rounded-full`} />
+
+        {/* Number */}
+        <span className={`text-xs font-bold tabular-nums w-6 flex-shrink-0 ${c.text} opacity-50`}>
+          {String(num).padStart(2, "0")}
+        </span>
+
+        {/* Icon pill */}
+        <div className={`w-8 h-8 rounded-lg ${c.icon} flex items-center justify-center flex-shrink-0 shadow-md group-hover:scale-105 transition-transform duration-200`}>
+          <p.icon className="w-4 h-4 text-white" />
+        </div>
+
+        {/* Title */}
+        <span className={`flex-1 text-base text-foreground/70 group-hover:text-foreground transition-colors duration-200 leading-snug`}>
+          {p.title}
+        </span>
+
+        {/* Theme badge — only shown in "All" view */}
+        {activeTheme === "all" && (
+          <span className={`hidden sm:inline-flex text-[10px] font-semibold px-2 py-0.5 rounded-full border ${c.bg} ${c.text} ${c.border} flex-shrink-0`}>
+            {p.theme === "agentic" ? "Agentic" : "SDG"}
+          </span>
+        )}
+
+        {/* Click hint */}
+        <span className="text-[10px] text-muted-foreground/30 group-hover:text-muted-foreground/60 transition-colors hidden sm:block flex-shrink-0">
+          View →
+        </span>
+      </motion.div>
+    );
+  });
 
   return (
     <div className="min-h-screen bg-background pt-24">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 max-w-3xl">
         <SectionHeading
           title="Problem Statements"
           subtitle="Choose a challenge and build a groundbreaking solution"
@@ -168,69 +202,64 @@ const Problems = () => {
 
         <div className="flex justify-center mb-10">
           <a href="/infothon_template.pptx" download>
-  <Button variant="neon" size="lg" className="gap-2">
-    <Download className="w-5 h-5" />
-    Download Template PPT
-  </Button>
-</a>
+            <Button variant="neon" size="lg" className="gap-2">
+              <Download className="w-5 h-5" />
+              Download Template PPT
+            </Button>
+          </a>
         </div>
 
-        {/* Theme tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* Filter tabs */}
+        <div className="flex items-center gap-2 mb-8 border-b border-white/8 pb-4">
           {THEMES.map((t) => (
             <button
               key={t.key}
               onClick={() => setActiveTheme(t.key)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-300 ${
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                 activeTheme === t.key
-                  ? "gradient-primary text-primary-foreground border-transparent shadow-lg shadow-primary/20"
-                  : "glass-card border-white/10 text-muted-foreground hover:text-foreground hover:border-primary/40"
+                  ? t.key === "all"
+                    ? "gradient-primary text-primary-foreground shadow-md"
+                    : t.key === "agentic"
+                    ? "bg-violet-500 text-white shadow-md shadow-violet-500/20"
+                    : "bg-emerald-500 text-white shadow-md shadow-emerald-500/20"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {t.label}
             </button>
           ))}
+          <span className="ml-auto text-xs text-muted-foreground/40">{filtered.length} total</span>
         </div>
 
-        {/* Count */}
-        <p className="text-center text-muted-foreground text-xs mb-8 tracking-wider uppercase">
-          {filtered.length} problem statements — click any to view details
-        </p>
-
-        {/* Two-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">
-          {filtered.map((p, i) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: Math.min(i * 0.025, 0.5) }}
-              onClick={() => setSelected(p)}
-              className="glass-card group cursor-pointer hover:neon-border transition-all duration-300 flex items-center gap-4 px-5 py-4 hover:bg-primary/5"
-            >
-              {/* Number */}
-              <span className="text-xs font-bold text-primary/40 w-7 flex-shrink-0 tabular-nums">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-
-              {/* Icon */}
-              <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
-                <p.icon className="w-4 h-4 text-primary-foreground" />
+        {/* Agentic section */}
+        {agFiltered.length > 0 && (
+          <div className="mb-10">
+            {activeTheme === "all" && (
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-2 h-2 rounded-full bg-violet-500" />
+                <span className="text-xs font-bold uppercase tracking-widest text-violet-400">Agentic AI & Autonomous Systems</span>
+                <span className="text-xs text-muted-foreground/40 ml-auto">{agFiltered.length} problems</span>
               </div>
+            )}
+            <div>{renderGroup(agFiltered, 0)}</div>
+          </div>
+        )}
 
-              {/* Title */}
-              <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300 leading-snug flex-1">
-                {p.title}
-              </span>
-
-              {/* Arrow */}
-              <ChevronRight className="w-4 h-4 text-muted-foreground/40 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-300 flex-shrink-0" />
-            </motion.div>
-          ))}
-        </div>
+        {/* SDG section */}
+        {sdgFiltered.length > 0 && (
+          <div>
+            {activeTheme === "all" && (
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Sustainable Development Goals</span>
+                <span className="text-xs text-muted-foreground/40 ml-auto">{sdgFiltered.length} problems</span>
+              </div>
+            )}
+            <div>{renderGroup(sdgFiltered, agFiltered.length)}</div>
+          </div>
+        )}
       </div>
 
-      {/* Modal */}
       <AnimatePresence>
         {selected && <Modal p={selected} onClose={() => setSelected(null)} />}
       </AnimatePresence>

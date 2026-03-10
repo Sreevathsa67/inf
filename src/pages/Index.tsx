@@ -91,7 +91,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: Clock, title: "24 hours", desc: "Non-stop innovation and coding marathon" },
-              { icon: Users, title: "Open to All", desc: "Students, professionals, and enthusiasts welcome" },
+              { icon: Users, title: "Open to All", desc: "Students,and enthusiasts welcome" },
               { icon: Trophy, title: "₹40,000+", desc: "Prize pool with exciting goodies and swag" },
             ].map((item, i) => (
               <motion.div
