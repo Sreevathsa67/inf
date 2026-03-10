@@ -91,7 +91,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: Clock, title: "24 hours", desc: "Non-stop innovation and coding marathon" },
-              { icon: Users, title: "Open to All", desc: "Students,and enthusiasts welcome" },
+              { icon: Users, title: "Open to All", desc: "Students and enthusiasts welcome" },
               { icon: Trophy, title: "₹40,000+", desc: "Prize pool with exciting goodies and swag" },
             ].map((item, i) => (
               <motion.div
@@ -149,7 +149,7 @@ const Index = () => {
           <SectionHeading title="Why Participate?" subtitle="More than just a hackathon" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Handshake, title: "Networking", desc: "Connect with industry leaders, mentors, and like-minded innovators from across the globe." },
+              { icon: Handshake, title: "Networking", desc: "Connect with industry leaders, mentors, and like-minded innovators." },
               { icon: Lightbulb, title: "Build Real Solutions", desc: "Work on real-world problems and create impactful solutions that matter." },
               { icon: Star, title: "Industry Mentorship", desc: "Get guided by expert mentors from top tech companies throughout the event." },
             ].map((item, i) => (
