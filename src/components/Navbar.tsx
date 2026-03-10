@@ -17,9 +17,13 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 border-x-0 rounded-none">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-display font-bold text-xl text-primary neon-text tracking-widest">
-          INFOTHON 6.0
+      <div className="w-full flex items-center justify-between h-16 px-12">
+        <Link to="/">
+          <img
+            src="/2.png"
+            alt="Infothon 6.0"
+            className="h-10 w-auto drop-shadow-[0_0_10px_hsl(48_100%_50%/0.5)]"
+          />
         </Link>
 
         {/* Desktop */}
@@ -37,14 +41,12 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://unstop.com/YOUR-LINK-HERE"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/register"
             className="text-sm font-display uppercase tracking-wider text-foreground/70 hover:text-primary transition-colors"
           >
             Register
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -79,15 +81,13 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href="https://unstop.com/YOUR-LINK-HERE"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/register"
                 onClick={() => setOpen(false)}
                 className="text-sm font-display uppercase tracking-wider text-foreground/70"
               >
                 Register
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

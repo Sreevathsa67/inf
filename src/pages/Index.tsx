@@ -62,7 +62,7 @@ const Index = () => {
             transition={{ delay: 0.7 }}
             className="font-display text-lg md:text-2xl tracking-[0.2em] text-foreground/80 mb-12"
           >
-            INNOVATE • BUILD • DISRUPT
+           
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
