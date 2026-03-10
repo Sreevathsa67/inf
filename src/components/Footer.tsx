@@ -24,7 +24,7 @@ const Footer = () => (
           <div className="flex flex-col gap-2">
             {[
               { to: "/problems", label: "Problem Statements" },
-              { to: "/sponsors", label: "Sponsors" },
+              ,
               { to: "/about", label: "About Us" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
