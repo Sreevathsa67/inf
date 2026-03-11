@@ -275,26 +275,7 @@ const Index = () => {
 
           </div>
 
-          {/* About Infothon strip */}
-          <motion.div
-            {...stagger}
-            transition={{ delay: 0.3 }}
-            className="mt-8 glass-card p-8 hover:neon-border transition-all duration-500"
-          >
-            <div className="flex items-start gap-6">
-              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Trophy className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/60 mb-1">Legacy</p>
-                <h3 className="font-display text-base font-bold text-foreground mb-3">About Infothon</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Infothon, hosted by the Department of ISE at VVCE, has been a flagship event fostering collaboration, innovation, and knowledge sharing among bright minds. From Infothon 1.0 through 5.0, each edition has set new benchmarks — inspiring creativity, teamwork, and impactful projects. Now in its{" "}
-                  <span className="text-primary font-semibold">sixth edition</span>, Infothon 6.0 is a platform where participants go beyond coding to explore ideas, build networks, and create solutions that matter.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          
 
         </div>
       </section>
