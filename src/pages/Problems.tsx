@@ -69,7 +69,7 @@ type Problem = { id: string; title: string; problem: string; objectives: string[
 
 const THEMES = [
   { key: "all",     label: "All" },
-  { key: "agentic", label: "Agentic AI" },
+  { key: "agentic", label: "Agentic AI and Autonomous Systems" },
   { key: "sdg",     label: "Sustainable Development Goals" },
 ];
 

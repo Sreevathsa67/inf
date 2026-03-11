@@ -44,8 +44,15 @@ const Navbar = () => {
             </div>
           </Link>
           <div className="w-px h-7 bg-white/20" />
-          <img src="/111.png" alt="Unstop" className="h-8 w-auto opacity-90 rounded" />
+          <img src="/34.png" alt="Unstop" className="h-12 w-auto opacity-90 rounded" />
         </div>
+        
+        {/* Text logo — visible on ALL screen sizes */}
+        <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="w-px h-7 bg-white/20" />
+          <img src="/23.png" alt="Unstop" className="h-12 w-auto opacity-90 rounded" />
+        </div>
+
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1 ml-auto">
