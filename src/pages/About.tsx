@@ -35,7 +35,7 @@ const teams = [
     members: [
       { name: "Sreevathsa R", role: "Technical Head", initials: "TH", desc: "Architecting the hackathon's tech infrastructure —  Website, judging platforms and dev environment setup." },
       { name: "Preetham SM", role: "Unstop Organizer", initials: "UO", desc: "Leading the Unstop team in managing registrations and participant engagement." },
-    
+     { name: "Dhurva D", role: "Tech team", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." }
     ],
   },
    {
@@ -45,7 +45,8 @@ const teams = [
       { name: "Unnathi P", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
      { name: "Srushti", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
       { name: "Raghav Bhat", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-       { name: "Shreyas Gowdru", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." }
+       { name: "Shreyas Gowdru", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+        { name: "Unnathi P", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." }
     ],
   }
   
