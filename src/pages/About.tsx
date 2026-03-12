@@ -18,7 +18,7 @@ const teams = [
     label: "Faculty Coordinators",
     members: [
      
-       { name: "Manjesh ", role: "Faculty Coordinator", initials: "FC"},
+       { name: "Manjesh R", role: "Faculty Coordinator", initials: "FC"},
         { name: "RK Rangan ", role: "Faculty Coordinator", initials: "FC" },
     ]
   },
@@ -38,6 +38,16 @@ const teams = [
     
     ],
   },
+   {
+    label: "Overall Co-ordinators",
+    members: [
+      { name: "Pragna C", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Unnathi P", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+     { name: "Srushti", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Raghav Bhat", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+       { name: "Shreyas Gowdru", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." }
+    ],
+  }
   
 ];
 
