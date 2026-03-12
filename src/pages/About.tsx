@@ -10,46 +10,42 @@ const gallery = [
   { src: "/gallery/photo3.jpeg", span: "" },
   { src: "/gallery/photo4.jpeg", span: "" },
   { src: "/gallery/photo5.jpeg", span: "md:col-span-2" },
-   { src: "/gallery/1234.jpeg", span: "md:col-span-2" },
+  { src: "/gallery/1234.jpeg", span: "md:col-span-2" },
 ];
 
 const teams = [
-    {
+  {
     label: "Faculty Coordinators",
     members: [
-     
-       { name: "Manjesh R", role: "Faculty Coordinator", initials: "FC"},
-        { name: "RK Rangan ", role: "Faculty Coordinator", initials: "FC" },
-    ]
+      { name: "Manjesh R", role: "Faculty Coordinator", initials: "FC",},
+      { name: "RK Rangan", role: "Faculty Coordinator", initials: "FC",} ],
   },
   {
     label: "Lead Organizers",
     members: [
       { name: "Sanjana R", role: "Lead Organizer", initials: "LO", desc: "Overseeing the entire event — from ideation to execution, ensuring every team is aligned and every milestone is met." },
-      { name: "Priya sarja ", role: "Lead Organizer", initials: "LO", desc: "Supporting the lead in coordinating cross-team efforts and managing key stakeholder communications." },
-       { name: "Akash Valmiki ", role: "Lead Organizer", initials: "LO", desc: "Supporting the lead in coordinating cross-team efforts and managing key stakeholder communications." }
+      { name: "Priya Sarja", role: "Lead Organizer", initials: "LO", desc: "Coordinating cross-team efforts and managing key stakeholder communications throughout the event." },
+      { name: "Akash Valmiki", role: "Lead Organizer", initials: "LO", desc: "Supporting event leadership in driving the vision of Infothon 6.0 from planning to delivery." },
     ],
   },
   {
     label: "Technical Team",
     members: [
-      { name: "Sreevathsa R", role: "Technical Head", initials: "TH", desc: "Architecting the hackathon's tech infrastructure —  Website, judging platforms and dev environment setup." },
+      { name: "Sreevathsa R", role: "Technical Head", initials: "TH", desc: "Architecting the hackathon's tech infrastructure — website, judging platforms, and dev environment setup." },
       { name: "Preetham SM", role: "Unstop Organizer", initials: "UO", desc: "Leading the Unstop team in managing registrations and participant engagement." },
-     { name: "Dhurva D", role: "Tech team", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." }
+      { name: "Dhurva D", role: "Tech Team", initials: "TT", desc: "Making the hackathon a success through effective technical coordination and management." },
     ],
   },
-   {
+  {
     label: "Overall Co-ordinators",
     members: [
       { name: "Pragna C", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
       { name: "Unnathi P", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-     { name: "Srushti", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Srushti", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
       { name: "Raghav Bhat", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-       { name: "Shreyas Gowdru", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-        { name: "Unnathi P", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." }
+      { name: "Shreyas Gowdru", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
     ],
-  }
-  
+  },
 ];
 
 const stagger = {
@@ -81,7 +77,6 @@ const MemberChip = ({ member }: { member: typeof teams[0]["members"][0] }) => {
         </div>
       </motion.div>
 
-      {/* Tooltip */}
       <AnimatePresence>
         {hovered && (
           <motion.div
