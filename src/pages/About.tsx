@@ -10,6 +10,7 @@ const gallery = [
   { src: "/gallery/photo3.jpeg", span: "" },
   { src: "/gallery/photo4.jpeg", span: "" },
   { src: "/gallery/photo5.jpeg", span: "md:col-span-2" },
+   { src: "/gallery/1234.jpeg", span: "md:col-span-2" },
 ];
 
 const teams = [
