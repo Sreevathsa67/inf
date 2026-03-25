@@ -208,8 +208,7 @@ const Problems = () => {
         />
 
         <p className="text-center text-sm text-muted-foreground/60 mb-6">
-          ⚠️ Open problem statements are{" "}
-          <span className="text-red-400 font-semibold">not allowed</span>{" "}
+          ⚠️ Open problem statements arenot allowed
           — participants must choose from the listed problem statements only.
         </p>
 
