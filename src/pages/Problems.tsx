@@ -35,6 +35,9 @@ const agenticProblems = [
   { id: "A23", title: "Smart Irrigation Decision Agent",  problem: "Water is often wasted due to inefficient irrigation planning.",  objectives: ["Analyze soil and weather datasets","Predict irrigation requirements","Generate optimized irrigation schedules","Reduce water consumption"], icon: Droplets },
   { id: "A24", title: "AI Tutor for Real-Time Student Learning Support",  problem: "Teachers cannot provide personalized guidance to every student.",  objectives: ["Analyze student performance data","Detect learning gaps","Provide personalized explanations","Recommend practice exercises"], icon: GraduationCap },
   { id: "A25", title: "AI Startup Feasibility Analyzer",  problem: "Entrepreneurs struggle to evaluate startup idea viability.",  objectives: ["Analyze market trends and competitors","Estimate potential demand","Generate feasibility reports","Provide risk assessment insights"], icon: Brain },
+  { id: "A26", title: "Autonomous Patent Conflict Detection Agent", problem: "Companies risk legal disputes due to unknowing patent infringements.", objectives: ["Analyze patent databases and product descriptions","Detect potential patent conflicts","Generate infringement risk scores","Recommend design or strategy modifications"], icon: Shield },
+{ id: "A27", title: "AI-Powered Recruitment Fraud Detection Agent", problem: "Job seekers fall victim to fake job postings and fraudulent recruiters.", objectives: ["Analyze job listing datasets","Detect suspicious patterns in postings","Generate fraud risk scores","Alert users and recommend verified platforms"], icon: AlertTriangle },
+  
 ];
 
 const sdgProblems = [
@@ -63,6 +66,8 @@ const sdgProblems = [
   { id: "S23", title: "Deforestation Monitoring Platform",  problem: "Forest loss is difficult to track in real time.",  objectives: ["Analyze satellite imagery","Detect deforestation activities","Identify high-risk regions","Generate environmental impact insights"], icon: Leaf },
   { id: "S24", title: "Disaster Relief Resource Allocation Optimizer",  problem: "Relief resources are often distributed inefficiently during disasters.",  objectives: ["Analyze disaster impact datasets","Prioritize affected regions","Optimize resource allocation","Improve relief response efficiency"], icon: AlertTriangle },
   { id: "S25", title: "SDG Impact Tracking Dashboard for Governments",  problem: "Governments struggle to track progress toward SDG targets.",  objectives: ["Integrate datasets across sectors","Track SDG indicators","Visualize progress through dashboards","Support data-driven policy decisions"], icon: Brain },
+  { id: "S26", title: "AI Soil Degradation Monitoring Platform", problem: "Agricultural land loses productivity due to undetected soil degradation.", objectives: ["Analyze soil quality and land use datasets","Detect degradation patterns","Predict high-risk agricultural zones","Recommend soil restoration strategies"], icon: Leaf },
+{ id: "S27", title: "Ocean Plastic Pollution Tracking System", problem: "Marine plastic waste is difficult to monitor and address at scale.", objectives: ["Analyze satellite and ocean current datasets","Detect plastic accumulation zones","Predict pollution spread patterns","Recommend targeted cleanup strategies"], icon: Droplets },
 ];
 
 type Problem = { id: string; title: string; problem: string; objectives: string[]; icon: any; theme: string; };
