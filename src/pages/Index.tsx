@@ -70,6 +70,9 @@ const Index = () => {
             <Button variant="neon" size="lg" asChild>
               <Link to="/problems">View Problem Statements</Link>
             </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/results">🏆 Shortlisted Teams</Link>
+            </Button>
           </motion.div>
         </div>
       </section>
@@ -109,7 +112,7 @@ const Index = () => {
           <div className="max-w-3xl mx-auto space-y-0">
             {[
               { icon: Calendar,    date: "March 28th",              title: "Registration Ends", desc: "Sign up and form your team" },
-              { icon: Send,        date: "March 29th – March 31st",  title: "PPT Submission",    desc: "Submit your solution approach" },
+              { icon: Send,        date: "March 29th – April 1st",  title: "PPT Submission",    desc: "Submit your solution approach" },
               { icon: Zap,         date: "April 11th and 12th",     title: "Hackathon Day",     desc: "24 hours of building and hacking" },
               { icon: CheckCircle, date: "April 12th",              title: "Results Announced", desc: "Winners declared and prizes distributed" },
             ].map((item, i) => (
@@ -180,9 +183,9 @@ const Index = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 group-hover:bg-primary/15 transition-all duration-300 overflow-hidden">
                   <img
-                    src="/34.png"
+                    src="/vvce_logo.png"
                     alt="VVCE"
-                    className="w-24 h-24 object-contain"
+                    className="w-14 h-14 object-contain"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).style.display = "none";
                       (e.currentTarget.nextElementSibling as HTMLElement).style.display = "flex";
@@ -232,9 +235,9 @@ const Index = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 group-hover:bg-primary/15 transition-all duration-300 overflow-hidden">
                   <img
-                    src="/23.png"
+                    src="/ise_logo.png"
                     alt="ISE"
-                    className="w-15 h-15 object-contain"
+                    className="w-14 h-14 object-contain"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).style.display = "none";
                       (e.currentTarget.nextElementSibling as HTMLElement).style.display = "flex";
@@ -262,7 +265,7 @@ const Index = () => {
               </p>
 
               <div className="flex flex-wrap gap-2">
-                {[ "Research Focused", "Industry Ready","Excellence"].map((tag) => (
+                {["Cutting-Edge Curriculum", "Research Focused", "Industry Ready", "Innovation Hub"].map((tag) => (
                   <span
                     key={tag}
                     className="text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-primary/20 text-primary/60 bg-primary/5"
@@ -275,7 +278,26 @@ const Index = () => {
 
           </div>
 
-          
+          {/* About Infothon strip */}
+          <motion.div
+            {...stagger}
+            transition={{ delay: 0.3 }}
+            className="mt-8 glass-card p-8 hover:neon-border transition-all duration-500"
+          >
+            <div className="flex items-start gap-6">
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Trophy className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/60 mb-1">Legacy</p>
+                <h3 className="font-display text-base font-bold text-foreground mb-3">About Infothon</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Infothon, hosted by the Department of ISE at VVCE, has been a flagship event fostering collaboration, innovation, and knowledge sharing among bright minds. From Infothon 1.0 through 5.0, each edition has set new benchmarks — inspiring creativity, teamwork, and impactful projects. Now in its{" "}
+                  <span className="text-primary font-semibold">sixth edition</span>, Infothon 6.0 is a platform where participants go beyond coding to explore ideas, build networks, and create solutions that matter.
+                </p>
+              </div>
+            </div>
+          </motion.div>
 
         </div>
       </section>
