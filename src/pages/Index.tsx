@@ -183,7 +183,7 @@ const Index = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 group-hover:bg-primary/15 transition-all duration-300 overflow-hidden">
                   <img
-                    src="/vvce_logo.png"
+                    src="/34.png"
                     alt="VVCE"
                     className="w-14 h-14 object-contain"
                     onError={(e) => {
@@ -235,7 +235,7 @@ const Index = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 group-hover:border-primary/50 group-hover:bg-primary/15 transition-all duration-300 overflow-hidden">
                   <img
-                    src="/ise_logo.png"
+                    src="/23.png"
                     alt="ISE"
                     className="w-14 h-14 object-contain"
                     onError={(e) => {
