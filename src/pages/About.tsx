@@ -17,14 +17,14 @@ const teams = [
   {
     label: "Faculty Coordinators",
     members: [
-      { name: "Manjesh R", role: "Faculty Coordinator", initials: "FC",},
+      { name: "Prof. Manjesh R", role: "Faculty Coordinator", initials: "FC",},
       { name: "Dr. R Kasturi Rangan", role: "Faculty Coordinator", initials: "FC",} ],
   },
   {
     label: "Lead Organizers",
     members: [
       { name: "Sanjana R", role: "Lead Organizer", initials: "LO", desc: "Overseeing the entire event — from ideation to execution, ensuring every team is aligned and every milestone is met." },
-      { name: "Priya Sarja", role: "Lead Organizer", initials: "LO", desc: "Coordinating cross-team efforts and managing key stakeholder communications throughout the event." },
+      { name: "Priyadarshani Sarja", role: "Lead Organizer", initials: "LO", desc: "Coordinating cross-team efforts and managing key stakeholder communications throughout the event." },
       { name: "Akash Valmiki", role: "Lead Organizer", initials: "LO", desc: "Supporting event leadership in driving the vision of Infothon 6.0 from planning to delivery." },
     ],
   },
