@@ -301,7 +301,24 @@ const Index = () => {
 
         </div>
       </section>
-
+{/* Sponsors */}
+<section className="relative z-10 py-16 px-4">
+  <div className="container mx-auto">
+    <SectionHeading title="Our Sponsors" subtitle="Proudly supported by" />
+    <motion.div
+      {...fadeUp}
+      className="flex justify-center items-center"
+    >
+<div className="rounded-3xl overflow-hidden border-2 border-primary/50 hover:border-primary hover:shadow-[0_0_40px_hsl(48_100%_50%_/_0.3)] transition-all duration-500 flex items-center justify-center bg-white/95">
+        <img
+          src="/677.png"
+          alt="Infothon 6.0 Sponsors"
+          className="max-w-xl w-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+        />
+      </div>
+    </motion.div>
+  </div>
+</section>
       <Footer />
     </div>
   );
