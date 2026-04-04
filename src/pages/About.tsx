@@ -17,8 +17,9 @@ const teams = [
   {
     label: "Faculty Coordinators",
     members: [
-      { name: "Prof. Manjesh R", role: "Faculty Coordinator", initials: "FC",},
-      { name: "Dr. R Kasturi Rangan", role: "Faculty Coordinator", initials: "FC",} ],
+      { name: "Prof. Manjesh R", role: "Faculty Coordinator", initials: "FC" },
+      { name: "Dr. R Kasturi Rangan", role: "Faculty Coordinator", initials: "FC" },
+    ],
   },
   {
     label: "Lead Organizers",
@@ -44,20 +45,20 @@ const teams = [
       { name: "Raghav Bhat", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
       { name: "Shreyas Gowdru", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
       { name: "Anupama M", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Archana Anil Patil", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Pranamya R", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Sukrutha K", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Vaishnavi N Kamath", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Khushi Kiran Jigali", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Likitha C", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Srushti Ravindra", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Kuber Lakshman Nayaka", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Likith T B", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Mahesh C", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Akshay Nadig", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Jnyanesh", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Nithesh J", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
-    { name: "Prabhav G K", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Archana Anil Patil", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Pranamya R", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Sukrutha K", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Vaishnavi N Kamath", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Khushi Kiran Jigali", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Likitha C", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Srushti Ravindra", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Kuber Lakshman Nayaka", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Likith T B", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Mahesh C", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Akshay Nadig", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Jnyanesh", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Nithesh J", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
+      { name: "Prabhav G K", role: "Co-ordinator", initials: "CO", desc: "Making the hackathon a success through effective coordination and management." },
     ],
   },
 ];
@@ -147,17 +148,8 @@ const About = () => (
               <span className="text-xs text-muted-foreground">{team.members.length} members</span>
             </div>
 
-            {/* Mobile: plain text */}
-            <div className="flex flex-wrap gap-x-1 pl-8 md:hidden">
-              {team.members.map((member, mi) => (
-                <span key={mi} className="text-sm text-foreground/70">
-                  {member.name}{mi < team.members.length - 1 ? <span className="text-primary/40 mx-1">·</span> : ""}
-                </span>
-              ))}
-            </div>
-
-            {/* Desktop: chips */}
-            <div className="hidden md:flex flex-wrap gap-2 pl-8">
+            {/* All screens: chips */}
+            <div className="flex flex-wrap gap-2 pl-8">
               {team.members.map((member, mi) => (
                 <motion.div
                   key={mi}
