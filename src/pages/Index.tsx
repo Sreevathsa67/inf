@@ -76,7 +76,67 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+{/* Event Flow */}
+<section className="relative z-10 py-24 px-4 bg-card/30">
+  <div className="container mx-auto">
+    <SectionHeading 
+      title="Event Flow" 
+      subtitle="Complete schedule of Infothon 6.0 hackathon" 
+    />
 
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+      {/* Day 1 */}
+      <div className="glass-card p-8">
+        <h3 className="font-display text-xl font-bold text-primary mb-6">
+          April 11 • Saturday
+        </h3>
+
+        <div className="space-y-4">
+          {[
+            ["08:00 AM", "Registration"],
+            ["09:00 AM", "Start of the Event"],
+            ["10:00 AM", "Inauguration"],
+            ["11:00 AM", "Tea & Coffee"],
+            ["01:30 PM", "Lunch"],
+            ["02:00 PM", "1st Checkpoint"],
+            ["05:00 PM", "Evening Snacks"],
+            ["08:00 PM", "2nd Checkpoint"],
+            ["09:00 PM", "Dinner"],
+          ].map((item, i) => (
+            <div key={i} className="flex justify-between border-b border-border pb-2">
+              <span className="text-muted-foreground text-sm">{item[0]}</span>
+              <span className="text-foreground text-sm font-medium">{item[1]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Day 2 */}
+      <div className="glass-card p-8">
+        <h3 className="font-display text-xl font-bold text-primary mb-6">
+          April 12 • Sunday
+        </h3>
+
+        <div className="space-y-4">
+          {[
+            ["12:00 AM", "Tea & Snacks"],
+            ["06:00 AM", "Tea & Coffee"],
+            ["08:30 AM", "Breakfast"],
+            ["09:00 AM", "Final Checkpoint"],
+            ["12:00 PM", "Prize Distribution & Valedictory"],
+          ].map((item, i) => (
+            <div key={i} className="flex justify-between border-b border-border pb-2">
+              <span className="text-muted-foreground text-sm">{item[0]}</span>
+              <span className="text-foreground text-sm font-medium">{item[1]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
       {/* Event Overview */}
       <section className="relative z-10 py-24 px-4">
         <div className="container mx-auto">
